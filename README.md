@@ -1,2 +1,2 @@
-# Aplikasi_sederhana
-Aplikasi sederhana
+# Aplikasi sederhana Untuk hitung menghitung
+lihat: https://iseplutpinur.github.io/Aplikasi_sederhana/
