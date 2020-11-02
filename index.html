@@ -21,6 +21,13 @@
 			- Persegi
 			- Persegi Panjang
 		-
+
+		----------------------------------------------------------------------------------------
+		- untuk menambahkan menu silakkan buat navigasi terlebih dahulu didalam tag class navbar
+		- kemudian dafrarkan di variable register
+		- kemudian dafratkan di controller menu
+		- untuk sub menu daftarkan juga di variable register
+		- untuk views bisa dibuat dalam class container
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +36,9 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Aplikasi Hitung Menghitung</title>
-	<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAW5QTFRFAAAA////0tvZx9LPzNbT+Pn5ytTR/////f7+6+/u3OPh/f7+z9nWk6iiZ4V99vj3qbq1q7y39/n4////ssG9q7u3////zdfUz9jW////kaeh6+/uZoR82+Lhkaagrr65qru29/j4VnduU3VsMltPMFlNL1hNMFhNMlpPU3VrYoF4NFxRMVpOM1tQTnBnmq2oucbDd5GKPGJXQGZbZYN7zdfUr7+7TnFnTG9m1d7b////+fr6y9XSbYqCVHZsRGlf3uXjma2oYH929vj33+Xj8/X119/dQWZcQmddo7Ww9/j4/v7+gJmSrr654ObkQ2heVXZt3+XkpbeyYYB4d5KKobOu4OblWHlw8PPydpGJobSvwMzJR2thfpeQ09zacY2ForSv4eflQGVb1Nza/Pz8zNbTc46HT3Jol6um4ujmuMbC8vX08/b1k6iiNV1SRmpgkqeit8XCZoR7NVxSZ4V8q7u3g5yVRWpgL1hMTG9lP4p8BAAAACJ0Uk5TAAAAAAAAAAc1cJIrnef9Q9fXQyzW1gadnTXmb/yR5tbXQ85/LV8AAAABYktHRAH/Ai3eAAAACXBIWXMAAArwAAAK8AFCrDSYAAAA7UlEQVQY02NgYGBkZOfg5OLi5GBnZGQAAkYmbh5ePiUlPl4ebiagCCMzv4Cyiqqauoa6pqAQCyMDq7CIlraOrp6+gaGRsagwK4OYuImpmbmFpZWVtY2tnYQYg6SUvYOVo5OzlYurlZu7lCSDtIyHi5Wnlpe3j6+Vn7+MNINsgH+gVVCws3dIqFWYfYAsSACoIjzCOzIKIgDU4mAVHRMbF59glWgP1CIplZRslZKalp6UYZUZIyfJICZhF5yVbZWTm5dfUFgkLgZ0mGhScUlpWbmuRkWlPNBhjCxCgsqq6hXqqhrKCopsjJieQ/c+ADujLMv2KQryAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDIwLTAyLTAxVDAxOjI0OjE2KzAwOjAw9SsECAAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyMC0wMi0wMVQwMToyNDoxNiswMDowMIR2vLQAAABGdEVYdHNvZnR3YXJlAEltYWdlTWFnaWNrIDYuNy44LTkgMjAxNC0wNS0xMiBRMTYgaHR0cDovL3d3dy5pbWFnZW1hZ2ljay5vcmfchu0AAAAAGHRFWHRUaHVtYjo6RG9jdW1lbnQ6OlBhZ2VzADGn/7svAAAAGHRFWHRUaHVtYjo6SW1hZ2U6OmhlaWdodAAxOTIPAHKFAAAAF3RFWHRUaHVtYjo6SW1hZ2U6OldpZHRoADE5MtOsIQgAAAAZdEVYdFRodW1iOjpNaW1ldHlwZQBpbWFnZS9wbmc/slZOAAAAF3RFWHRUaHVtYjo6TVRpbWUAMTU4MDUyMDI1NlX6H94AAAAPdEVYdFRodW1iOjpTaXplADBCQpSiPuwAAABWdEVYdFRodW1iOjpVUkkAZmlsZTovLy9tbnRsb2cvZmF2aWNvbnMvMjAyMC0wMi0wMS9kNzBlMmI2ZGFkYzZiYTlhZWNlY2ViNWU5YjEzNTBkMC5pY28ucG5ncxlsbQAAAABJRU5ErkJggg==" sizes="16x16" type="image/png">
+	<link rel="icon"
+		href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAW5QTFRFAAAA////0tvZx9LPzNbT+Pn5ytTR/////f7+6+/u3OPh/f7+z9nWk6iiZ4V99vj3qbq1q7y39/n4////ssG9q7u3////zdfUz9jW////kaeh6+/uZoR82+Lhkaagrr65qru29/j4VnduU3VsMltPMFlNL1hNMFhNMlpPU3VrYoF4NFxRMVpOM1tQTnBnmq2oucbDd5GKPGJXQGZbZYN7zdfUr7+7TnFnTG9m1d7b////+fr6y9XSbYqCVHZsRGlf3uXjma2oYH929vj33+Xj8/X119/dQWZcQmddo7Ww9/j4/v7+gJmSrr654ObkQ2heVXZt3+XkpbeyYYB4d5KKobOu4OblWHlw8PPydpGJobSvwMzJR2thfpeQ09zacY2ForSv4eflQGVb1Nza/Pz8zNbTc46HT3Jol6um4ujmuMbC8vX08/b1k6iiNV1SRmpgkqeit8XCZoR7NVxSZ4V8q7u3g5yVRWpgL1hMTG9lP4p8BAAAACJ0Uk5TAAAAAAAAAAc1cJIrnef9Q9fXQyzW1gadnTXmb/yR5tbXQ85/LV8AAAABYktHRAH/Ai3eAAAACXBIWXMAAArwAAAK8AFCrDSYAAAA7UlEQVQY02NgYGBkZOfg5OLi5GBnZGQAAkYmbh5ePiUlPl4ebiagCCMzv4Cyiqqauoa6pqAQCyMDq7CIlraOrp6+gaGRsagwK4OYuImpmbmFpZWVtY2tnYQYg6SUvYOVo5OzlYurlZu7lCSDtIyHi5Wnlpe3j6+Vn7+MNINsgH+gVVCws3dIqFWYfYAsSACoIjzCOzIKIgDU4mAVHRMbF59glWgP1CIplZRslZKalp6UYZUZIyfJICZhF5yVbZWTm5dfUFgkLgZ0mGhScUlpWbmuRkWlPNBhjCxCgsqq6hXqqhrKCopsjJieQ/c+ADujLMv2KQryAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDIwLTAyLTAxVDAxOjI0OjE2KzAwOjAw9SsECAAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyMC0wMi0wMVQwMToyNDoxNiswMDowMIR2vLQAAABGdEVYdHNvZnR3YXJlAEltYWdlTWFnaWNrIDYuNy44LTkgMjAxNC0wNS0xMiBRMTYgaHR0cDovL3d3dy5pbWFnZW1hZ2ljay5vcmfchu0AAAAAGHRFWHRUaHVtYjo6RG9jdW1lbnQ6OlBhZ2VzADGn/7svAAAAGHRFWHRUaHVtYjo6SW1hZ2U6OmhlaWdodAAxOTIPAHKFAAAAF3RFWHRUaHVtYjo6SW1hZ2U6OldpZHRoADE5MtOsIQgAAAAZdEVYdFRodW1iOjpNaW1ldHlwZQBpbWFnZS9wbmc/slZOAAAAF3RFWHRUaHVtYjo6TVRpbWUAMTU4MDUyMDI1NlX6H94AAAAPdEVYdFRodW1iOjpTaXplADBCQpSiPuwAAABWdEVYdFRodW1iOjpVUkkAZmlsZTovLy9tbnRsb2cvZmF2aWNvbnMvMjAyMC0wMi0wMS9kNzBlMmI2ZGFkYzZiYTlhZWNlY2ViNWU5YjEzNTBkMC5pY28ucG5ncxlsbQAAAABJRU5ErkJggg=="
+		sizes="16x16" type="image/png">
 
 	<!-- style utama -->
 	<style>
@@ -256,6 +265,25 @@
 	<!-- navigation -->
 	<div class="clear"></div>
 	<div class="navbar">
+		<!-- menu Statistika -->
+		<div class="nav-container">
+			<div class="dropdown-container">
+				<select id="m_statistika">
+					<option value="reset" disabled selected>-- Statistika ---</option>
+					<option value="ms_median">Median</option>
+				</select>
+
+				<!-- icon -->
+				<div class="select-icon">
+					<svg focusable="false" viewBox="0 0 104 128" width="25" height="35" class="icon">
+						<path
+							d="m2e1 95a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm0-3e1a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm0-3e1a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm14 55h68v1e1h-68zm0-3e1h68v1e1h-68zm0-3e1h68v1e1h-68z">
+						</path>
+					</svg>
+				</div>
+			</div>
+		</div>
+
 		<!-- menu luas bangun datar -->
 		<div class="nav-container">
 			<div class="dropdown-container">
@@ -723,7 +751,42 @@
 		<!-- ------------------------------------------------- -->
 
 
-
+		<!-- ------------------------------------------------- -->
+		<!-- menu statistika -->
+		<div class="inputan" id="ms_median" style="display: none;">
+			<h1>Menentukan median dari data kelompok</h1>
+			<div class="form-group">
+				<label for="ms_median_lm">Tepi Bawah Kelas Median</label>
+				<input type="number" id="ms_median_lm" placeholder="Tepi Bawah Kelas Median">
+			</div>
+			<div class="form-group">
+				<label for="ms_median_n">Jumlah frekuensi</label>
+				<input type="number" id="ms_median_n" placeholder="Jumlah frekuensi">
+			</div>
+			<div class="form-group">
+				<label for="ms_median_zf">Frekuensi komulatif diatas kelas median</label>
+				<input type="number" id="ms_median_zf" placeholder="Frekuensi komulatif diatas kelas median">
+			</div>
+			<div class="form-group">
+				<label for="ms_median_f">Frekuensi kelas median</label>
+				<input type="number" id="ms_median_f" placeholder="Frekuensi kelas median">
+			</div>
+			<div class="form-group">
+				<label for="ms_median_c">Interval kelas median</label>
+				<input type="number" id="ms_median_c" placeholder="Interval kelas median">
+			</div>
+			<div class="form-group">
+				<label for="ms_median_hasil">Hasil</label>
+				<input type="number" id="ms_median_hasil" placeholder="Hasil">
+			</div>
+			<h4>Rumus:</h4>
+			<div id="rumus">$Med = L_{m}\ +\ \left(\frac{\frac{N}{2}-\sum f}{F_{m}}\right)\cdot c$</div>
+			<h4>Hasil:</h4>
+			<div id="hasil"></div>
+			<div class="clear"></div>
+		</div>
+		<!-- akhir dari menu statistika -->
+		<!-- ------------------------------------------------- -->
 
 		<h1 id="titlemain">Silahkan Pilih Menu Diatas</h1>
 		<div class="clear"></div>
@@ -856,6 +919,37 @@
 
 	</script>
 
+	<!-- script statistika -->
+	<script>
+		let ms_median_lm = document.querySelector("#ms_median_lm")
+		let ms_median_n = document.querySelector("#ms_median_n")
+		let ms_median_zf = document.querySelector("#ms_median_zf")
+		let ms_median_f = document.querySelector("#ms_median_f")
+		let ms_median_c = document.querySelector("#ms_median_c")
+		ms_median_lm.addEventListener('keyup', () => { hitung() })
+		ms_median_n.addEventListener('keyup', () => { hitung() })
+		ms_median_f.addEventListener('keyup', () => { hitung() })
+		ms_median_zf.addEventListener('keyup', () => { hitung() })
+		ms_median_c.addEventListener('keyup', () => { hitung() })
+
+		function hitung() {
+			let hasil = document.querySelector('#hasil')
+			let ms_median_lm_var = Number(ms_median_lm.value)
+			let ms_median_n_var = Number(ms_median_n.value)
+			let ms_median_f_var = Number(ms_median_f.value)
+			let ms_median_zf_var = Number(ms_median_zf.value)
+			let ms_median_c_var = Number(ms_median_c.value)
+
+			let ms_median_jumlah = ms_median_lm_var + ((((ms_median_n_var / 2) - ms_median_zf_var) / ms_median_f_var) * ms_median_c_var)
+
+			ms_median_jumlah = isNaN(ms_median_jumlah) ? "" : ms_median_jumlah
+			hasil.innerHTML = `$Med = ${ms_median_lm_var}\\ +\\ \\left(\\frac{\\frac{${ms_median_n_var}}{2}-\\ ${ms_median_zf_var}}{${ms_median_f_var}}\\right)\\cdot ${ms_median_c_var} = ${(ms_median_jumlah == "") ? "" : ms_median_jumlah.toFixed(2)}$`
+			document.querySelector("#ms_median_hasil").value = ms_median_jumlah
+			renderMath()
+
+		}
+	</script>
+
 	<!-- ------------------------------------------------- -->
 	<!-- script menu option -->
 	<!-- register variable -->
@@ -885,6 +979,9 @@
 			'mlvbr_volume_balok',
 
 			// peluang
+
+			// statistika
+			'ms_median',
 		];
 
 		var resetmenu = [
@@ -892,7 +989,8 @@
 			'm_keliling_bangun_datar',
 			'm_kecepatan', 'm_skala',
 			'm_debit', 'm_peluang',
-			'm_luas_volume_bangun_ruang'
+			'm_luas_volume_bangun_ruang',
+			'm_statistika'
 		];
 	</script>
 
@@ -938,6 +1036,12 @@
 		var menu7 = document.getElementById("m_peluang");
 		menu7.addEventListener('change', function () {
 			controller('m_peluang', menu7);
+		});
+
+		// menu peluang
+		var menu8 = document.getElementById("m_statistika");
+		menu8.addEventListener('change', function () {
+			controller('m_statistika', menu8);
 		});
 
 		// controller function
@@ -1017,6 +1121,23 @@
 			window.location.href = '#' + value;
 		}
 	</script>
+
+
+	<!-- Mathjax -->
+	<script>
+		function renderMath() {
+			MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+		}
+	</script>
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+		tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+		});
+  	</script>
+	<script type="text/javascript" async
+		src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
 
 	<!-- qutoation-->
 	<script>

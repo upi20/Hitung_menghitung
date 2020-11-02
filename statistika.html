@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+
+</head>
+
+<body>
+  <form action="">
+    <h4>Menentukan median dari data kelompok</h4>
+    <label for="median_lm">Tepi Bawah Kelas Median</label>
+    <br>
+    <input type="number" id="median_lm">
+    <br>
+    <label for="median_n">Jumlah frekuensi</label>
+    <br>
+    <input type="number" id="median_n">
+    <br>
+    <label for="median_zf">Frekuensi komulatif diatas kelas median</label>
+    <br>
+    <input type="number" id="median_zf">
+    <br>
+    <label for="median_f">Frekuensi kelas median</label>
+    <br>
+    <input type="number" id="median_f">
+    <br>
+    <label for="median_c">Interval kelas median</label>
+    <br>
+    <input type="number" id="median_c">
+    <br>
+  </form>
+  <h4>Rumus:</h4>
+  <div id="rumus"></div>
+  <h4>Hasil:</h4>
+  <div id="hasil"></div>
+
+  <script>
+    let rumus = document.querySelector('#rumus')
+    rumus.innerHTML = `$Med = L_{m}\\ +\\ \\left(\\frac{\\frac{N}{2}-\\sum f}{F_{m}}\\right)\\cdot c$`
+    let median_lm = document.querySelector("#median_lm")
+    let median_n = document.querySelector("#median_n")
+    let median_zf = document.querySelector("#median_zf")
+    let median_f = document.querySelector("#median_f")
+    let median_c = document.querySelector("#median_c")
+    median_lm.addEventListener('keyup', () => { hitung() })
+    median_n.addEventListener('keyup', () => { hitung() })
+    median_f.addEventListener('keyup', () => { hitung() })
+    median_zf.addEventListener('keyup', () => { hitung() })
+    median_c.addEventListener('keyup', () => { hitung() })
+
+    function hitung() {
+      let hasil = document.querySelector('#hasil')
+      let median_lm_var = Number(median_lm.value)
+      let median_n_var = Number(median_n.value)
+      let median_f_var = Number(median_f.value)
+      let median_zf_var = Number(median_zf.value)
+      let median_c_var = Number(median_c.value)
+
+      let jumlah = median_lm_var + ((((median_n_var / 2) - median_zf_var) / median_f_var) * median_c_var)
+
+      jumlah = isNaN(jumlah) ? "" : jumlah
+      hasil.innerHTML = `$Med = ${median_lm_var}\\ +\\ \\left(\\frac{\\frac{${median_n_var}}{2}-\\ ${median_zf_var}}{${median_f_var}}\\right)\\cdot ${median_c_var} = ${jumlah}$`
+
+      renderMath()
+
+    }
+
+    function renderMath() {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  </script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+  </script>
+  <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+</body>
+
+</html>
